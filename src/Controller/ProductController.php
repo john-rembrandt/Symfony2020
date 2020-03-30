@@ -23,7 +23,7 @@ class ProductController extends AbstractController
         $product = new Product();
         $product->setName('Keyboard');
         $product->setPrice(1999);
-        $product->setDescription('Ergonomic and stylish!');
+        //$product->setDescription('Ergonomic and stylish!');
         
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
         $entityManager->persist($product);
@@ -31,6 +31,7 @@ class ProductController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
         
-        return new Response('Saved new product with id '.$product->getId());
+        //return new Response('Saved new product with id '.$product->getId());
+        return $this->render('product/index.html.twig', ['id'=> $product->getId()]);
     }
 }
