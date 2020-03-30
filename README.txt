@@ -16,8 +16,16 @@ Au 18.03.20 j'en suit a faire mon premier commit, après avoir:
 6: Ajouter une route "app_lucky_number".
 7: Créer un README.txt qui tiens lieu de documentation personnel.
 
+le 29.03.20
+
+1: Créer une class entity avec le generateur.
+2: Migrer et envoyer avec création d'une nouvelle table.
+3: Créer un controller ProductController avec le generateur.
+4: Modifier la sortie du controller product par celle du luckyController.
+5: Modifier le product index.html.twig en s inspirant de lucky.html.twig.
+
 A faire:
 
-1: Installer les annotations.
+1: Probleme avec le bloc title dans product/ index.html.twig
 2: Apprendre "flex".
 3: Voir la barre des taches onglets "dépréciation" pour régler le problème.
