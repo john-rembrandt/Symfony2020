@@ -19,12 +19,12 @@ class Comments
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $auteur;
+    private $author;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $contenu;
+    private $content;
 
     /**
      * @ORM\Column(type="datetime")
@@ -41,26 +41,26 @@ class Comments
         return $this->id;
     }
 
-    public function getAuteur(): ?string
+    public function getAuthor(): ?string
     {
-        return $this->auteur;
+        return $this->author;
     }
 
-    public function setAuteur(string $auteur): self
+    public function setAuthor(string $author): self
     {
-        $this->auteur = $auteur;
+        $this->author = $author;
 
         return $this;
     }
 
-    public function getContenu(): ?string
+    public function getContent(): ?string
     {
-        return $this->contenu;
+        return $this->content;
     }
 
-    public function setContenu(string $contenu): self
+    public function setContent(string $content): self
     {
-        $this->contenu = $contenu;
+        $this->content = $content;
 
         return $this;
     }
@@ -85,6 +85,30 @@ class Comments
     public function setNewsComments(?news $newsComments): self
     {
         $this->newsComments = $newsComments;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
 
         return $this;
     }
