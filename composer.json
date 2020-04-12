@@ -30,10 +30,11 @@
 		"symfony/yaml" : "5.0.*"
 	},
 	"require-dev" : {
-		"symfony/debug-pack" : "*",
-		"symfony/maker-bundle" : "^1.14",
-		"symfony/profiler-pack" : "*",
-		"symfony/test-pack" : "*"
+		"fzaninotto/faker": "^1.9",
+		"symfony/debug-pack": "*",
+		"symfony/maker-bundle": "^1.14",
+		"symfony/profiler-pack": "*",
+		"symfony/test-pack": "*"
 	},
 	"config" : {
 		"preferred-install" : {
