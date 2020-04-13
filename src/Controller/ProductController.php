@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Product;
-
+use Faker;
 
 class ProductController extends AbstractController
 {
@@ -16,13 +16,14 @@ class ProductController extends AbstractController
      */
     public function createProduct(): Response
     {
+        $faker = Faker\Factory::create();
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
         $entityManager = $this->getDoctrine()->getManager();
         
         $product = new Product();
-        $product->setName('Keyboard');
-        $product->setPrice(1999);
+        $product->setName($faker->name);
+        $product->setPrice($faker->randomDigitNotNull);
         //$product->setDescription('Ergonomic and stylish!');
         
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
@@ -32,6 +33,7 @@ class ProductController extends AbstractController
         $entityManager->flush();
         
         //return new Response('Saved new product with id '.$product->getId());
-        return $this->render('product/index.html.twig', ['id'=> $product->getId()]);
+        return $this->render('product/index.html.twig', ['id'=> $product->getId(), 'name'=> $product->getName(),
+               'price'=> $product->getPrice()]);
     }
 }
