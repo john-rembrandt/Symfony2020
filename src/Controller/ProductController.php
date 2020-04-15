@@ -36,4 +36,40 @@ class ProductController extends AbstractController
          return $this->render('product/index.html.twig', ['id'=> $product->getId(), 'name'=> $product->getName(),
                 'price'=> $product->getPrice()]);
     }
+
+    /**
+     * @Route("/product-list", name="list_product")
+     */
+    public function listProduct(): Response
+    {
+        $product = $this->getDoctrine()
+        ->getRepository(Product::class)
+        ->findAll();
+
+        return new Response('liste de produit' .$product->getName());
+
+
+    }
+
+    /**
+     * @Route("/product/{id}", name="product_show")
+     */
+    public function show($id)
+    {
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        return new Response('Check out this great product: '.$product->getName());
+
+        // or render a template
+        // in the template, print things with {{ product.name }}
+        // return $this->render('product/show.html.twig', ['product' => $product]);
+    }
 }
