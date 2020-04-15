@@ -12,7 +12,7 @@ use Faker;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product", name="create_product")
+     * @Route("/product-create", name="create_product")
      */
     public function createProduct(): Response
     {
@@ -32,8 +32,8 @@ class ProductController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
         
-        return new Response('Saved new product with id '.$product->getId());
-        // return $this->render('product/index.html.twig', ['id'=> $product->getId(), 'name'=> $product->getName(),
-            //    'price'=> $product->getPrice()]);
+        //return new Response('Saved new product with id '.$product->getId());
+         return $this->render('product/index.html.twig', ['id'=> $product->getId(), 'name'=> $product->getName(),
+                'price'=> $product->getPrice()]);
     }
 }
