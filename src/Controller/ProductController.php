@@ -42,12 +42,29 @@ class ProductController extends AbstractController
      */
     public function listProduct(): Response
     {
-        $product = $this->getDoctrine()
+        $allProduct = $this->getDoctrine()
         ->getRepository(Product::class)
         ->findAll();
+        //var_dump($allProduct);
+        /*
+        foreach($product as $products => $attribut)
+        {
+             $attribut->getName();
+        }
+        //var_dump($attributs);
+        */
+        return $this->render('product/index.html.twig',
+               array('products' => $allProduct));
 
-        return new Response('liste de produit' .$product->getName());
-
+        /*       
+        foreach($product as $products => $attribut)
+        {
+            $attributs = $attribut->getName();
+        }
+        //var_dump($attributs);
+        return $this->render('product/index.html.twig',
+               ['attributs' => $attributs]);
+        */
 
     }
 

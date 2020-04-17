@@ -9,13 +9,26 @@
 </style>
 
 <div class="example-wrapper">
-{#     <h1>Hello {{ controller_name }}</h1>#}
+{#     <h1>Hello {{ controller_name }}</h1>
     
     <p>Your new id is : {{ id }}</p>
     <p>Your new name is : {{ name }}</p>
-    <p>Your new price is : {{ price }}</p>
+    <p>Your new price is : {{ price }}</p> #}
+    <p>
     
-    This friendly message is coming from:
+    {# Your new Tab name is : {{ attribut }} #}
+    {% for product in products %}
+    <article>
+        <p>Identifiant integer de la db</p>
+       <p> {{ product.id  }} </p>
+       <p>Nom venant de Faker</p>
+        <p> {{ product.name  }} </p>
+        <p>Prix du produit</p>
+         <p> {{ product.price  }} </p>
+    </article>
+    {% endfor %}
+    
+    </p>
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/wamp64/www/Symfony2020/src/Controller/ProductController.php'|file_link(0) }}">src/Controller/ProductController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/wamp64/www/Symfony2020/templates/product/index.html.twig'|file_link(0) }}">templates/product/index.html.twig</a></code></li>
