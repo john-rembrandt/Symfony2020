@@ -1,8 +1,22 @@
-article
+.article
 {
     border: 2px solid black;
+    padding: 10px;
+    text-align: center;
 }
 p
 {
     color: red;
+}
+strong
+{
+    color: blue;
+}
+h2
+{
+    color: green;
+}
+h3
+{
+    color: orange;
 }

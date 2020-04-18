@@ -45,26 +45,9 @@ class ProductController extends AbstractController
         $allProduct = $this->getDoctrine()
         ->getRepository(Product::class)
         ->findAll();
-        //var_dump($allProduct);
-        /*
-        foreach($product as $products => $attribut)
-        {
-             $attribut->getName();
-        }
-        //var_dump($attributs);
-        */
+        
         return $this->render('product/index.html.twig',
                array('products' => $allProduct));
-
-        /*       
-        foreach($product as $products => $attribut)
-        {
-            $attributs = $attribut->getName();
-        }
-        //var_dump($attributs);
-        return $this->render('product/index.html.twig',
-               ['attributs' => $attributs]);
-        */
 
     }
 
