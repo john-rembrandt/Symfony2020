@@ -18,12 +18,20 @@ Au 18.03.20 j'en suit a faire mon premier commit, après avoir:
 
 le 29.03.20
 
-1: Créer une class entity avec le generateur.
+1: Créer une class entity Product.php avec le generateur.
 2: Migrer et envoyer avec création d'une nouvelle table.
 3: Créer un controller ProductController avec le generateur.
 4: Modifier la sortie du controller product par celle du luckyController.
-5: Modifier le product index.html.twig en s inspirant de lucky.html.twig.
+5: Modifier le product index.html.twig(Product) en s inspirant de lucky.html.twig.
 
+le 17.04.20
+
+1: Installer "Faker" en mode --dev.
+2: Hydrater Product.php via le Productcontroller.
+3: Ajouter manuellement le dossier public/Css.
+4: Ajouter le fichier style.css.
+5: 
+ 
 A faire:
 
 1: Probleme avec le bloc title dans product/ index.html.twig
