@@ -20,14 +20,14 @@
                     <p>Your new price is : {{ price }}</p> #}
                     
                     
-                    {# Your new Tab name is : {{ attribut }} #}
+                    {# Your new Tab name is : {{ attribut }} 
                     {% for product in products %}
                     <article class="article">
                         <p>Identifiant integer de la db : <strong> {{ product.id  }} </strong></p>
                         <p>Nom venant de Faker : <h2> {{ product.name  }} </h2> </p>
                         <p>Prix du produit : <h3> {{ product.price  }} </h3> </p>
                     </article>
-                    {% endfor %}
+                    {% endfor %} #}
     
                     
                     <ul>
@@ -41,6 +41,8 @@
                         </code>
                         </li>
                     </ul>
+
+                    {{ form(form) }}
                 </div>
             {% endblock %}
         </body>

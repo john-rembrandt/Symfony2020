@@ -6,7 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Product;
+use App\Form\ProductType;
 use Faker;
 
 class ProductController extends AbstractController
@@ -71,5 +73,20 @@ class ProductController extends AbstractController
         // or render a template
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
+    }
+
+    /**
+     * @Route("/productForm", name="product_form")
+     */
+    public function new(Request $request)
+    {
+        $product = new Product();
+        
+
+        $form = $this->createForm(ProductType::class, $product);
+
+        return $this->render('product/product.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }
