@@ -33,7 +33,7 @@ class ProductController extends AbstractController
         $entityManager->flush();
         
         //return new Response('Saved new product with id '.$product->getId());
-         return $this->render('product/index.html.twig', ['id'=> $product->getId(), 'name'=> $product->getName(),
+         return $this->render('product/product.html.twig', ['id'=> $product->getId(), 'name'=> $product->getName(),
                 'price'=> $product->getPrice()]);
     }
 
@@ -46,7 +46,7 @@ class ProductController extends AbstractController
         ->getRepository(Product::class)
         ->findAll();
         
-        return $this->render('product/index.html.twig',
+        return $this->render('product/product.html.twig',
                array('products' => $allProduct));
 
     }
