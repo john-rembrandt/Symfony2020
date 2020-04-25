@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="\public\Css\style.css" type="text/css" />
+        {# <link rel="stylesheet" href="\public\Css\style.css" type="text/css" /> #}
+        {# the CSS file lives at "public/css/blog.css" #}
+        <link href="{{ asset('Css/style.css') }}" rel="stylesheet"/>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -11,3 +13,12 @@
         {% block javascripts %}{% endblock %}
     </body>
 </html>
+
+{# the image lives at "public/images/logo.png" #}
+<img src="{{ asset('images/logo.png') }}" alt="Symfony!"/>
+
+{# the CSS file lives at "public/css/blog.css" #}
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet"/>
+
+{# the JS file lives at "public/bundles/acme/js/loader.js" #}
+<script src="{{ asset('bundles/acme/js/loader.js') }}"></script>
