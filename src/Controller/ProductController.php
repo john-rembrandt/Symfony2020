@@ -78,14 +78,14 @@ class ProductController extends AbstractController
     /**
      * @Route("/productForm", name="product_form")
      */
-    public function new(Request $request)
+    public function formulaire(Request $request)
     {
         $product = new Product();
         
 
         $form = $this->createForm(ProductType::class, $product);
 
-        return $this->render('product/product.html.twig', [
+        return $this->render('product/productForm.html.twig', [
             'form' => $form->createView(),
         ]);
     }
