@@ -42,7 +42,10 @@ le 19.04.20
 2: Ajouter une variable form dans Product.html.twig.
 3: Renommer Product/index.html.twig en Product/product.html.twig.
 4: Renommer du coup les url dans les sorties de fonction du ProductController.
-5:
+  
+le 08.02.21
+
+1: Installé yarn depuis npm(a controllé le fonctionnement)
  
 A faire:
 
